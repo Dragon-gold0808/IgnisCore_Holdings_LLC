@@ -2,6 +2,46 @@
 
 This document explains how to implement email functionality for the contact form.
 
+---
+
+## Quick start: EmailJS (no backend needed)
+
+1. **Create an EmailJS account**  
+   Go to [https://www.emailjs.com/](https://www.emailjs.com/) and sign up (free tier is enough).
+
+2. **Add an email service**  
+   - In the dashboard: **Email Services** → **Add New Service**.  
+   - Connect your email (Gmail, Outlook, or custom SMTP).  
+   - Copy the **Service ID**.
+
+3. **Create an email template**  
+   - Go to **Email Templates** → **Create New Template**.  
+   - Set **To Email** to `{{to_email}}` (or your address, e.g. `info@igniscoreholdings.com`).  
+   - Subject example: `Contact from {{from_name}}`.  
+   - Body example:  
+     `From: {{from_name}} ({{from_email}})\nPhone: {{phone}}\nCompany: {{company}}\nService: {{service}}\n\nMessage:\n{{message}}`  
+   - Save and copy the **Template ID**.
+
+4. **Get your public key**  
+   - In the dashboard go to **Account** → **API Keys** (or **General**).  
+   - Copy your **Public Key**.
+
+5. **Configure the project**  
+   - In the project root, copy the example env file:  
+     `cp .env.example .env` (or on Windows: copy `.env.example` to `.env`).  
+   - Edit `.env` and set:
+     ```
+     VITE_EMAILJS_PUBLIC_KEY=your_public_key
+     VITE_EMAILJS_SERVICE_ID=your_service_id
+     VITE_EMAILJS_TEMPLATE_ID=your_template_id
+     ```
+   - Restart the dev server: stop it (Ctrl+C), then run `npm run dev` again.
+
+6. **Test**  
+   Submit the contact form on the site. You should see a success message and receive the email.
+
+---
+
 ## Current Implementation
 
 The contact form supports three methods for sending emails:
@@ -9,11 +49,11 @@ The contact form supports three methods for sending emails:
 ### 1. EmailJS (Recommended for client-side)
 - Sign up at https://www.emailjs.com/
 - Create a service and email template
-- Set environment variables in `.env`:
+- Set environment variables in `.env` (see Quick start above):
   ```
+  VITE_EMAILJS_PUBLIC_KEY=your_public_key
   VITE_EMAILJS_SERVICE_ID=your_service_id
   VITE_EMAILJS_TEMPLATE_ID=your_template_id
-  VITE_EMAILJS_PUBLIC_KEY=your_public_key
   ```
 
 ### 2. Backend API (Recommended for production)
