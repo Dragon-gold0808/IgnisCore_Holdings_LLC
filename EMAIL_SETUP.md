@@ -16,7 +16,7 @@ This document explains how to implement email functionality for the contact form
 
 3. **Create an email template**  
    - Go to **Email Templates** → **Create New Template**.  
-   - Set **To Email** to `{{to_email}}` (or your address, e.g. `info@igniscoreholdings.com`).  
+   - Set **To Email** to `{{to_email}}` (or your address, e.g. `info@igniscoreholdings.net`).  
    - Subject example: `Contact from {{from_name}}`.  
    - Body example:  
      `From: {{from_name}} ({{from_email}})\nPhone: {{phone}}\nCompany: {{company}}\nService: {{service}}\n\nMessage:\n{{message}}`  
@@ -139,6 +139,6 @@ Create an email template in EmailJS with these variables:
 - `{{company}}` - Company name
 - `{{service}}` - Service interest
 - `{{message}}` - Message content
-- `{{to_email}}` - Recipient email (info@igniscoreholdings.com)
+- `{{to_email}}` - Recipient email (info@igniscoreholdings.net)
 
 The form will automatically use the mailto fallback if other methods fail.

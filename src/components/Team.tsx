@@ -88,7 +88,7 @@ export function Team() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <div className="text-sm text-muted-foreground">
-                📧 careers@igniscoreholdings.com
+                📧 careers@igniscoreholdings.net
               </div>
               <div className="text-sm text-muted-foreground">
                 📍 Remote & On-site positions available

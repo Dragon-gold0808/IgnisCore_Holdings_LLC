@@ -3,7 +3,7 @@
 export const SITE = {
   companyName: 'IgnisCore Holdings LLC',
   tagline: 'Strategic Growth & Innovation',
-  companyUrl: 'https://igniscoreholdings.com',
-  contactEmail: 'info@igniscoreholdings.com',
+  companyUrl: 'https://www.igniscoreholdings.net',
+  contactEmail: 'info@igniscoreholdings.net',
   calendlyUrl: 'https://calendly.com', // Replace with your booking link when ready
 } as const;
